@@ -84,3 +84,28 @@ bool IntSLList::isInList(int el) const {
     for (tmp = head; tmp != 0 && !(tmp->info == el); tmp = tmp->next);
     return tmp != 0;
 }
+
+void IntSLList::printList(){
+    IntSLLNode *tmp = head;
+    while (tmp != 0) {
+        std::cout << tmp->info << std::endl;
+        tmp = tmp->next;
+    }
+}
+
+int main() {
+    IntSLLNode *p = new IntSLLNode(10);
+    p->next = new IntSLLNode(8);
+    p->next->next = new IntSLLNode(6);
+
+    IntSLList list;
+    list.addToHead(5);
+    list.addToHead(6);
+    list.addToHead(7);
+    list.addToHead(8);
+    list.deleteFromHead();
+    list.printList();
+
+    system("pause");
+    return 0;
+}

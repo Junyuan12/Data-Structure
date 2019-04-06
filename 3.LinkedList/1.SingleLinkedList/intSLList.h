@@ -32,8 +32,9 @@ public:
     int deleteFromTail(); // delete the tail and return its info;
     void deleteNode(int);
     bool isInList(int) const;
-    
-private:
+    void printList();
+
+  private:
     IntSLLNode *head, *tail;
 };
 
