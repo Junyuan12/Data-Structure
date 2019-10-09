@@ -316,7 +316,9 @@ void CBinTree::Postorder()
 void CBinTree::PreorderRecursively(pSTreeNode pNode)
 {
     if (pNode == NULL)
+    {
         return;
+    }
 
     cout << " " << pNode->key << " ";
     PreorderRecursively(pNode->pLeftChild);
@@ -326,7 +328,9 @@ void CBinTree::PreorderRecursively(pSTreeNode pNode)
 void CBinTree::InorderRecursively(pSTreeNode pNode)
 {
     if (pNode == NULL)
+    {
         return;
+    }
 
     InorderRecursively(pNode->pLeftChild);
     cout << " " << pNode->key << " ";
@@ -336,7 +340,9 @@ void CBinTree::InorderRecursively(pSTreeNode pNode)
 void CBinTree::PostorderRecursively(pSTreeNode pNode)
 {
     if (pNode == NULL)
+    {
         return;
+    }
 
     PostorderRecursively(pNode->pLeftChild);
     PostorderRecursively(pNode->pRightChild);
