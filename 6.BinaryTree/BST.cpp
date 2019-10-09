@@ -1,4 +1,4 @@
-//代码来源：https://blog.csdn.net/lining0420/article/details/76167901
+//代码参考：https://blog.csdn.net/lining0420/article/details/76167901
 
 #include <iostream>
 #include <stack>
@@ -183,7 +183,7 @@ void CBinTree::Delete(TreeKeyType Value)
     }
 
     // 处理Value元素的父节点和Value元素的节点
-    if (pFindNode->pLeftChild == NULL || pFindNode == NULL)
+    if (pFindNode->pLeftChild == NULL || pFindNode->pRightChild == NULL)
     {
         // 一个子节点为空或者两个字节点都为空
         pSTreeNode pTemp = NULL;
@@ -454,12 +454,11 @@ int main()
     pBinTree->PreorderRecursively(pRoot);
     cout << endl;
 
-    // ！！！删除8后运行会问题，待解决
-    // DeleteKey = 8;
-    // pBinTree->Delete(DeleteKey);
-    // cout << "delete elem " << DeleteKey << " PreorderRecursively: ";
-    // pBinTree->PreorderRecursively(pRoot);
-    // cout << endl;
+    DeleteKey = 8;
+    pBinTree->Delete(DeleteKey);
+    cout << "delete elem " << DeleteKey << " PreorderRecursively: ";
+    pBinTree->PreorderRecursively(pRoot);
+    cout << endl;
 
     delete pBinTree;
     pBinTree = NULL;
